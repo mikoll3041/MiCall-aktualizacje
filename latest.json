@@ -1,4 +1,4 @@
 {
- "version": "2.11.0",
- "notes": "• Aktualizacje jednym kliknięciem — „Aktualizuj serwer” i „Aktualizuj MiCall”, bez pobierania ZIP-ów\n• Telefon: przybliżanie zdjęć dwoma palcami albo podwójnym stuknięciem — przybliża się tylko zdjęcie, nie cała aplikacja\n• Wejście na czat albo DM = od razu najnowsze wiadomości na dole\n• Każda rozmowa DM może mieć swój motyw tła (na telefonie: „⋯” w nagłówku rozmowy)\n• Zielona kropka statusu jest nad efektem ramki awatara\n• Ochrona pingu przy udostępnianiu ekranu naprawdę obniża jakość, gdy łącze się zapycha"
+ "version": "2.12.0",
+ "notes": "• Aktualizacje w pełni automatyczne: serwer instaluje nową wersję sam (gdy nikt nie rozmawia), a aplikacja MiCall sama pobiera nową wersję i zastępuje poprzednią — bez klikania i bez ZIP-ów\n• Aplikacja aktualizuje się po rozmowie głosowej, nigdy w trakcie; z zamkniętym oknem (w zasobniku) — po cichu w tle\n• Telefon: przybliżanie zdjęć dwoma palcami albo podwójnym stuknięciem — przybliża się tylko zdjęcie\n• Wejście na czat albo DM = od razu najnowsze wiadomości na dole\n• Każda rozmowa DM może mieć swój motyw tła (na telefonie: „⋯” w nagłówku rozmowy)\n• Zielona kropka statusu nad efektem ramki awatara"
 }
