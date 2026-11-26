@@ -1,4 +1,4 @@
 {
- "version": "2.12.1",
- "notes": "• Aplikacja na Windows zbudowana z pełnymi informacjami o programie — mniej fałszywych alarmów antywirusa\n• Aktualizacje w pełni automatyczne: serwer instaluje nową wersję sam (gdy nikt nie rozmawia), a aplikacja MiCall sama pobiera nową wersję i zastępuje poprzednią — bez klikania i bez ZIP-ów\n• Aplikacja aktualizuje się po rozmowie głosowej, nigdy w trakcie; z zamkniętym oknem (w zasobniku) — po cichu w tle\n• Telefon: przybliżanie zdjęć dwoma palcami albo podwójnym stuknięciem — przybliża się tylko zdjęcie\n• Wejście na czat albo DM = od razu najnowsze wiadomości na dole\n• Każda rozmowa DM może mieć swój motyw tła (na telefonie: „⋯” w nagłówku rozmowy)\n• Zielona kropka statusu nad efektem ramki awatara"
+ "version": "2.13.0",
+ "notes": "• Powiadomienia na telefonie w tle — wiadomości i połączenia przychodzą nawet przy zamkniętym MiCall, jak w Messengerze (kilka wiadomości z jednej rozmowy w jednym powiadomieniu, przyciski „Odpowiedz” i „Przeczytane”, dzwonienie z „Odbierz” / „Odrzuć”, nieodebrane połączenia)\n• Dymki czatu: kółko ze zdjęciem osoby przy krawędzi ekranu — przesuwasz je, przeciągasz na ✕, a dotknięcie otwiera małe okno rozmowy tylko z tą osobą\n• Ustawienia → Dźwięki: własny dzwonek, sygnał dzwonienia, dźwięk wiadomości, pisania, wysłania i inne — wbudowane, z soundboardu albo z własnego pliku"
 }
