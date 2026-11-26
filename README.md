@@ -8,7 +8,7 @@ Nic nie trzeba stąd pobierać ręcznie:
 2. Administrator klika w MiCall **„Aktualizuj serwer”** — serwer pobiera nową wersję, sprawdza sumę SHA-256 i uruchamia się ponownie.
 3. Każdy w aplikacji na Windows dostaje przycisk **„Aktualizuj MiCall”** — jedno kliknięcie i gotowe. Strona i telefon odświeżają się same.
 
-Każde wydanie (`vX.Y.Z`) zawiera:
+Najnowsza wersja jest opisana w `latest.json`, a jej pliki leżą w folderze `vX.Y.Z`:
 
 | plik | co to |
 |---|---|
