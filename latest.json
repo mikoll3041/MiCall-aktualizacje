@@ -1,4 +1,4 @@
 {
- "version": "2.16.0",
- "notes": "🎯 DJ Kosmos: Enter w wyszukiwarce gra dokładnie wybraną piosenkę (strzałki ↑↓ wybierają wiersz)\n✅ Każdy wynik z YouTube jest od razu sprawdzany — zablokowany poza YouTube dostaje zamiennik (ta sama piosenka z SoundCloud / Audius / innej wersji) albo 🚫\n🚫 Bot nigdy nie podmienia piosenki na inną — jeśli nie da się jej nigdzie zagrać, mówi to wprost\n🧠 Centrala pamięta zablokowane filmy i ich zamienniki dla wszystkich"
+ "version": "2.17.0",
+ "notes": "🎵 Naprawiona muzyka z YouTube w aplikacji na komputerze: YouTube blokował prawie każdą piosenkę na adresie 127.0.0.1 — teraz odtwarzacz działa przez adres https centrali i gra normalnie\n🧹 Wyczyszczona lista „zablokowanych” piosenek (była zaśmiecona fałszywymi blokadami z komputera)"
 }
