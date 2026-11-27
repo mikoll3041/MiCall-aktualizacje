@@ -1,4 +1,4 @@
 {
- "version": "2.15.0",
- "notes": "🎵 DJ Kosmos: gdy YouTube blokuje utwór poza swoją stroną, bot szuka go na SoundCloud i Audius (tylko ten sam utwór — zgadza się tytuł, wykonawca i długość)\n☁️ Linki z SoundCloud i Audius działają w /play; źródło można wybrać: /play sc: …, /play audius: …, /play yt: …\n🔑 Opcjonalnie: klucze SoundCloud w ustawieniach centrali — wtedy wyszukiwanie po nazwie najpierw na SoundCloud"
+ "version": "2.16.0",
+ "notes": "🎯 DJ Kosmos: Enter w wyszukiwarce gra dokładnie wybraną piosenkę (strzałki ↑↓ wybierają wiersz)\n✅ Każdy wynik z YouTube jest od razu sprawdzany — zablokowany poza YouTube dostaje zamiennik (ta sama piosenka z SoundCloud / Audius / innej wersji) albo 🚫\n🚫 Bot nigdy nie podmienia piosenki na inną — jeśli nie da się jej nigdzie zagrać, mówi to wprost\n🧠 Centrala pamięta zablokowane filmy i ich zamienniki dla wszystkich"
 }
