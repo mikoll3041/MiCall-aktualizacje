@@ -1,0 +1,100 @@
+name: android
+# Buduje aplikację MiCall na Androida, testuje ją w emulatorze i publikuje niepodpisany APK
+# (centrala podpisuje go swoim kluczem). Wyniki testu (logi, zrzuty ekranu) trafiają na gałąź ci-wyniki.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'android/src/**'
+      - 'android/res/**'
+      - 'android/AndroidManifest.xml'
+      - 'android/build.sh'
+      - 'android/ci/**'
+      - 'android/tools/**'
+      - '.github/workflows/android.yml'
+permissions:
+  contents: write
+concurrency:
+  group: android
+  cancel-in-progress: false
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      CODE: ${{ github.run_number }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+          cache: false
+      - id: b
+        name: Budowa APK
+        run: |
+          mkdir -p wyniki
+          if bash android/build.sh > wyniki/build.log 2>&1; then echo "ok=1" >> "$GITHUB_OUTPUT"; else echo "ok=0" >> "$GITHUB_OUTPUT"; fi
+          cat wyniki/build.log
+      - id: s
+        name: Test podpisu (kod centrali + apksigner)
+        if: steps.b.outputs.ok == '1'
+        run: |
+          BT="$ANDROID_HOME/build-tools/$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -1)"
+          (cd android/tools/apksign && go run . ../../build/MiCall-unsigned.apk ../../build/MiCall-test.apk /tmp/k.pem) > wyniki/sign.log 2>&1 || true
+          if "$BT/apksigner" verify --verbose --print-certs android/build/MiCall-test.apk >> wyniki/sign.log 2>&1; then echo PODPIS_OK >> wyniki/sign.log; echo "ok=1" >> "$GITHUB_OUTPUT"; else echo PODPIS_ZLY >> wyniki/sign.log; echo "ok=0" >> "$GITHUB_OUTPUT"; fi
+          cat wyniki/sign.log
+      - name: KVM
+        if: steps.s.outputs.ok == '1'
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Udawana centrala
+        if: steps.s.outputs.ok == '1'
+        run: |
+          (cd android/tools/mock && go build -o /tmp/mock .)
+          nohup /tmp/mock > wyniki/mock.out 2>&1 &
+          sleep 1; curl -s http://127.0.0.1:8080/log || true
+      - name: Test w emulatorze
+        if: steps.s.outputs.ok == '1'
+        continue-on-error: true
+        timeout-minutes: 25
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 34
+          target: google_apis
+          arch: x86_64
+          profile: pixel_6
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -no-snapshot
+          script: bash android/ci/smoke.sh android/build/MiCall-test.apk wyniki
+      - name: Publikacja
+        if: steps.s.outputs.ok == '1'
+        run: |
+          W="$(cat wyniki/WYNIK 2>/dev/null || echo brak)"
+          echo "wynik testu: $W"
+          if [ "$W" != "OK" ]; then echo "nie publikuję"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898729+github-actions[bot]@users.noreply.github.com"
+          git pull -q --rebase origin main
+          git rm -q --ignore-unmatch 'android/MiCall-*.apk' || true
+          cp android/build/MiCall-unsigned.apk "android/MiCall-$CODE.apk"
+          SUM=$(sha256sum "android/MiCall-$CODE.apk" | cut -d' ' -f1)
+          SIZE=$(stat -c%s "android/MiCall-$CODE.apk")
+          printf '{"version":"1.0.%s","code":%s,"file":"MiCall-%s.apk","sha256":"%s","size":%s}\n' "$CODE" "$CODE" "$CODE" "$SUM" "$SIZE" > android/latest.json
+          git add android/latest.json "android/MiCall-$CODE.apk"
+          git commit -q -m "Android 1.0.$CODE"
+          git push -q origin HEAD:main
+          echo OPUBLIKOWANO >> wyniki/WYNIK
+      - name: Wyniki na gałąź ci-wyniki
+        if: always()
+        run: |
+          mkdir -p wyniki && cd wyniki
+          echo "run ${{ github.run_number }} commit ${{ github.sha }}" > RUN
+          git init -q && git checkout -q -b ci-wyniki && git add -A
+          git -c user.name=ci -c user.email=ci@micall.invalid commit -q -m "wyniki ${{ github.run_number }}"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" ci-wyniki
