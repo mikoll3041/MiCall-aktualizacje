@@ -35,7 +35,6 @@ final class Setup {
             bub = Notif.areBubblesAllowed30(nm) ? "all" : "none";
         }
         o.put("bubbles", bub);
-        if (ch != null && Build.VERSION.SDK_INT >= 30 && !ch.canBubble() && bub.equals("all")) o.put("bubbles", "channel");
         int global = -1;
         try { global = Settings.Secure.getInt(c.getContentResolver(), "notification_bubbles", -1); } catch (Exception ignored) { }
         if (global == -1) try { global = Settings.Global.getInt(c.getContentResolver(), "notification_bubbles", -1); } catch (Exception ignored) { }
