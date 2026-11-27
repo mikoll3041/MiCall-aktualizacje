@@ -16,7 +16,8 @@ rm -rf build && mkdir -p build/gen build/classes build/dex build/x
 "$BT/aapt2" compile --dir res -o build/res.zip
 "$BT/aapt2" link -o build/base.apk -I "$JAR" --manifest AndroidManifest.xml --java build/gen \
   --min-sdk-version 28 --target-sdk-version 34 --version-code "$CODE" --version-name "$VER" build/res.zip
-javac -encoding UTF-8 -source 8 -target 8 -Xlint:-options -Xlint:deprecation -bootclasspath "$JAR" -classpath "$JAR" \
+# --release 8: java.* z JDK (lambdy), android.* z android.jar; d8 przerabia to na kod dla Androida
+javac -encoding UTF-8 --release 8 -Xlint:-options -Xlint:deprecation -classpath "$JAR" \
   -d build/classes $(find src build/gen -name '*.java')
 (cd build/classes && jar cf ../classes.jar .)
 "$BT/d8" --release --min-api 28 --lib "$JAR" --output build/dex build/classes.jar

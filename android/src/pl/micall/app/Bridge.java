@@ -70,6 +70,16 @@ final class Bridge {
         if (ok(n)) new Thread(() -> Updater.check(a, true), "upd").start();
     }
 
+    /** Z dymka: otwórz tę rozmowę w pełnej aplikacji. */
+    @JavascriptInterface public void openApp(String n, String c) {
+        if (!ok(n)) return;
+        a.runOnUiThread(() -> {
+            Intent i = new Intent(a, MainActivity.class).setAction(Intent.ACTION_VIEW).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            if (c != null && !c.isEmpty()) i.putExtra("open", c);
+            a.startActivity(i);
+        });
+    }
+
     @JavascriptInterface public void openUrl(String n, String url) {
         if (!ok(n) || url == null || !(url.startsWith("https://") || url.startsWith("http://"))) return;
         a.runOnUiThread(() -> {
