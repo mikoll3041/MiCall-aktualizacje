@@ -1,0 +1,19 @@
+build-tools: /usr/local/lib/android/sdk/build-tools/37.0.0
+platforma:   /usr/local/lib/android/sdk/platforms/android-36
+wersja:      1.0.4 (4)
+src/pl/micall/app/Web.java:58: warning: [deprecation] setStatusBarColor(int) in Window has been deprecated
+        getWindow().setStatusBarColor(0xFF0B0616);
+                   ^
+src/pl/micall/app/Web.java:59: warning: [deprecation] setNavigationBarColor(int) in Window has been deprecated
+        getWindow().setNavigationBarColor(0xFF0B0616);
+                   ^
+src/pl/micall/app/Web.java:69: warning: [deprecation] setDatabaseEnabled(boolean) in WebSettings has been deprecated
+        s.setDatabaseEnabled(true);
+         ^
+3 warnings
+package: name='pl.micall.app' versionCode='4' versionName='1.0.4' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'
+minSdkVersion:'28'
+targetSdkVersion:'34'
+uses-permission: name='android.permission.INTERNET'
+uses-permission: name='android.permission.ACCESS_NETWORK_STATE'
+-rw-r--r-- 1 runner runner 224851 Nov 27 06:29 build/MiCall-unsigned.apk

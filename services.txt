@@ -1,0 +1,59 @@
+ACTIVITY MANAGER SERVICES (dumpsys activity services)
+  User 0 active services:
+  * ServiceRecord{4b3e130 u0 pl.micall.app/.MiService}
+    intent={cmp=pl.micall.app/.MiService}
+    packageName=pl.micall.app
+    processName=pl.micall.app
+    baseDir=/data/app/~~I_OgulKMT9rBXpRx48T7PQ==/pl.micall.app-WazV0UixscxXMtPM9xCJhg==/base.apk
+    dataDir=/data/user/0/pl.micall.app
+    app=ProcessRecord{e7038ba 3234:pl.micall.app/u0a192}
+    mAllowWhileInUsePermissionInFgsReason=PROC_STATE_TOP
+    allowUiJobScheduling=true
+    recentCallingPackage=pl.micall.app
+    recentCallingUid=10192
+    allowStartForeground=PROC_STATE_TOP
+    startForegroundCount=1
+    infoAllowStartForeground=[callingPackage: pl.micall.app; callingUid: 10192; uidState: TOP ; uidBFSL: [BFSL]; intent: Intent { cmp=pl.micall.app/.MiService }; code:PROC_STATE_TOP; tempAllowListReason:<null>; targetSdkVersion:34; callerTargetSdkVersion:34; startForegroundCount:0; bindFromPackage:null: isBindService:false]
+    isForeground=true foregroundId=1 types=00000200 foregroundNoti=Notification(channel=bg shortcut=null contentView=null vibrate=null sound=null defaults=0x0 flags=0x62 color=0xff8b5cf6 category=service vis=PRIVATE)
+    createTime=-1m20s384ms startingBgTimeout=--
+    lastActivity=-1m19s213ms restartTime=-1m20s382ms createdFromFg=true
+    startRequested=true delayedStop=false stopIfKilled=false callStart=true lastStartId=2
+ startCommandResult=1
+
+  * ServiceRecord{931782 u0 pl.micall.app/org.chromium.content.app.SandboxedProcessService0:0}
+    intent={cmp=pl.micall.app/org.chromium.content.app.SandboxedProcessService0:0}
+    packageName=pl.micall.app
+    processName=com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0
+    baseDir=/data/app/~~RjMLdCLF50Fg5LCfDsCtmw==/com.google.android.webview-KY5m83SdnhGHesDVxO4FsA==/WebViewGoogle.apk
+    dataDir=/data/user/0/com.google.android.webview
+    app=ProcessRecord{3a7c013 3515:com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u0a192i0}
+    isolationHostProc=ProcessRecord{3a7c013 3515:com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u0a192i0}
+    mAllowWhileInUsePermissionInFgsReason=PROC_STATE_TOP
+    allowUiJobScheduling=false
+    recentCallingPackage=pl.micall.app
+    recentCallingUid=10192
+    allowStartForeground=PROC_STATE_TOP
+    startForegroundCount=0
+    infoAllowStartForeground=[callingPackage: pl.micall.app; callingUid: 10192; uidState: TOP ; uidBFSL: [BFSL]; intent: Intent { cmp=pl.micall.app/org.chromium.content.app.SandboxedProcessService0:0 (has extras) }; code:PROC_STATE_TOP; tempAllowListReason:<null>; targetSdkVersion:34; callerTargetSdkVersion:34; startForegroundCount:0; bindFromPackage:null: isBindService:true]
+    createTime=-1m23s945ms startingBgTimeout=--
+    lastActivity=-1m21s684ms restartTime=-1m23s153ms createdFromFg=true
+    Bindings:
+    * IntentBindRecord{9fe99dd CREATE}:
+      intent={cmp=pl.micall.app/org.chromium.content.app.SandboxedProcessService0:0}
+      binder=android.os.BinderProxy@2370952
+      requested=true received=true hasBound=true doRebind=false
+      * Client AppBindRecord{db22423 ProcessRecord{e7038ba 3234:pl.micall.app/u0a192}}
+        Per-process Connections:
+          ConnectionRecord{64df9b8 u0 CR IMP pl.micall.app/org.chromium.content.app.SandboxedProcessService0:0:@36f141b flags=0x80000041}
+          ConnectionRecord{6f3e94e u0 CR WPRI pl.micall.app/org.chromium.content.app.SandboxedProcessService0:0:@f3b4c49 flags=0x80000021}
+    All Connections:
+      ConnectionRecord{64df9b8 u0 CR IMP pl.micall.app/org.chromium.content.app.SandboxedProcessService0:0:@36f141b flags=0x80000041}
+      ConnectionRecord{6f3e94e u0 CR WPRI pl.micall.app/org.chromium.content.app.SandboxedProcessService0:0:@f3b4c49 flags=0x80000021}
+
+  Connection bindings to services:
+  * ConnectionRecord{64df9b8 u0 CR IMP pl.micall.app/org.chromium.content.app.SandboxedProcessService0:0:@36f141b flags=0x80000041}
+    binding=AppBindRecord{db22423 pl.micall.app/org.chromium.content.app.SandboxedProcessService0:0:pl.micall.app}
+    conn=android.os.BinderProxy@36f141b flags=0x80000041
+  * ConnectionRecord{6f3e94e u0 CR WPRI pl.micall.app/org.chromium.content.app.SandboxedProcessService0:0:@f3b4c49 flags=0x80000021}
+    binding=AppBindRecord{db22423 pl.micall.app/org.chromium.content.app.SandboxedProcessService0:0:pl.micall.app}
+    conn=android.os.BinderProxy@f3b4c49 flags=0x80000021

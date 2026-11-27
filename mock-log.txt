@@ -1,0 +1,27 @@
+ 107.5s GET /
+ 107.7s GET /
+ 108.5s GET /favicon.ico
+ 108.6s js: nonce ok wersja 1.0.4 urzadzenie eff77d4480a0ecf1
+ 108.7s STREAM device=eff77d4480a0ecf1&since=0&name=sdk_gphone64_x86_64 auth=Bearer test-token
+ 108.8s js: status {"notif":true,"bubbles":"all","bubblesGlobal":1,"battery":false,"install":false,"fsi":true,"mic":true,"service":true,"sdk":34,"maker":"Google","version":"1.0.4","code":4}
+ 117.9s trigger msg1
+ 123.3s trigger msg2
+ 126.3s trigger grp
+ 133.9s js: vis false 
+ 135.8s trigger msg1
+ 141.2s trigger call
+ 148.0s trigger callend
+ 152.7s trigger missed
+ 163.1s trigger call
+ 170.5s trigger callend
+ 176.3s js: vis true 
+ 180.8s js: bubble true
+ 182.2s GET /?bubble=c1
+ 183.5s js: nonce ok wersja 1.0.4 urzadzenie eff77d4480a0ecf1
+ 183.5s js: status {"notif":true,"bubbles":"all","bubblesGlobal":1,"battery":false,"install":false,"fsi":true,"mic":true,"service":true,"sdk":34,"maker":"Google","version":"1.0.4","code":4}
+ 183.6s GET /favicon.ico
+ 187.0s trigger clear
+ 187.7s GET /?bubble=c3
+ 188.3s GET /favicon.ico
+ 188.5s js: nonce ok wersja 1.0.4 urzadzenie eff77d4480a0ecf1
+ 188.7s js: status {"notif":true,"bubbles":"all","bubblesGlobal":1,"battery":false,"install":false,"fsi":true,"mic":true,"service":true,"sdk":34,"maker":"Google","version":"1.0.4","code":4}

@@ -1,0 +1,28 @@
+2026/11/27 06:31:01 GET /
+2026/11/27 06:31:01 GET /
+2026/11/27 06:31:02 GET /favicon.ico
+2026/11/27 06:31:02 js: nonce ok wersja 1.0.4 urzadzenie eff77d4480a0ecf1
+2026/11/27 06:31:02 STREAM device=eff77d4480a0ecf1&since=0&name=sdk_gphone64_x86_64 auth=Bearer test-token
+2026/11/27 06:31:02 js: status {"notif":true,"bubbles":"all","bubblesGlobal":1,"battery":false,"install":false,"fsi":true,"mic":true,"service":true,"sdk":34,"maker":"Google","version":"1.0.4","code":4}
+2026/11/27 06:31:11 trigger msg1
+2026/11/27 06:31:17 trigger msg2
+2026/11/27 06:31:20 trigger grp
+2026/11/27 06:31:27 js: vis false 
+2026/11/27 06:31:29 trigger msg1
+2026/11/27 06:31:35 trigger call
+2026/11/27 06:31:41 trigger callend
+2026/11/27 06:31:46 trigger missed
+2026/11/27 06:31:57 trigger call
+2026/11/27 06:32:04 trigger callend
+2026/11/27 06:32:10 js: vis true 
+2026/11/27 06:32:14 js: bubble true
+2026/11/27 06:32:16 GET /?bubble=c1
+2026/11/27 06:32:17 js: nonce ok wersja 1.0.4 urzadzenie eff77d4480a0ecf1
+2026/11/27 06:32:17 js: status {"notif":true,"bubbles":"all","bubblesGlobal":1,"battery":false,"install":false,"fsi":true,"mic":true,"service":true,"sdk":34,"maker":"Google","version":"1.0.4","code":4}
+2026/11/27 06:32:17 GET /favicon.ico
+2026/11/27 06:32:20 trigger clear
+2026/11/27 06:32:21 GET /?bubble=c3
+2026/11/27 06:32:22 GET /favicon.ico
+2026/11/27 06:32:22 js: nonce ok wersja 1.0.4 urzadzenie eff77d4480a0ecf1
+2026/11/27 06:32:22 js: status {"notif":true,"bubbles":"all","bubblesGlobal":1,"battery":false,"install":false,"fsi":true,"mic":true,"service":true,"sdk":34,"maker":"Google","version":"1.0.4","code":4}
+2026/11/27 06:32:24 STREAM koniec
