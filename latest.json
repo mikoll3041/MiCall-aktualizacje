@@ -1,4 +1,4 @@
 {
- "version": "2.14.0",
- "notes": "📱 Aplikacja MiCall na Androida — jak Messenger: dymki czatu nad innymi aplikacjami, powiadomienia i dzwonienie przy zamkniętym MiCall (bez Google), odpowiadanie prosto z powiadomienia. Pobierz: <adres MiCall>/pobierz/android\n🔔 Aplikacja i Chrome na tym samym telefonie nie dublują powiadomień"
+ "version": "2.15.0",
+ "notes": "🎵 DJ Kosmos: gdy YouTube blokuje utwór poza swoją stroną, bot szuka go na SoundCloud i Audius (tylko ten sam utwór — zgadza się tytuł, wykonawca i długość)\n☁️ Linki z SoundCloud i Audius działają w /play; źródło można wybrać: /play sc: …, /play audius: …, /play yt: …\n🔑 Opcjonalnie: klucze SoundCloud w ustawieniach centrali — wtedy wyszukiwanie po nazwie najpierw na SoundCloud"
 }
