@@ -1,4 +1,4 @@
 {
- "version": "2.13.0",
- "notes": "• Powiadomienia na telefonie w tle — wiadomości i połączenia przychodzą nawet przy zamkniętym MiCall, jak w Messengerze (kilka wiadomości z jednej rozmowy w jednym powiadomieniu, przyciski „Odpowiedz” i „Przeczytane”, dzwonienie z „Odbierz” / „Odrzuć”, nieodebrane połączenia)\n• Dymki czatu: kółko ze zdjęciem osoby przy krawędzi ekranu — przesuwasz je, przeciągasz na ✕, a dotknięcie otwiera małe okno rozmowy tylko z tą osobą\n• Ustawienia → Dźwięki: własny dzwonek, sygnał dzwonienia, dźwięk wiadomości, pisania, wysłania i inne — wbudowane, z soundboardu albo z własnego pliku"
+ "version": "2.14.0",
+ "notes": "📱 Aplikacja MiCall na Androida — jak Messenger: dymki czatu nad innymi aplikacjami, powiadomienia i dzwonienie przy zamkniętym MiCall (bez Google), odpowiadanie prosto z powiadomienia. Pobierz: <adres MiCall>/pobierz/android\n🔔 Aplikacja i Chrome na tym samym telefonie nie dublują powiadomień"
 }
