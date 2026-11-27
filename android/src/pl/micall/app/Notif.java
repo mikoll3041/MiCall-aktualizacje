@@ -261,7 +261,7 @@ final class Notif {
                     .setWhen(last == null ? System.currentTimeMillis() : last.ts)
                     .addAction(reply)
                     .addAction(read);
-            if (!alert && Build.VERSION.SDK_INT >= 31) b.setSilent(true);
+            if (!alert) b.setGroup("micall.cicho").setGroupAlertBehavior(Notification.GROUP_ALERT_SUMMARY); // bez dźwięku
             if (Build.VERSION.SDK_INT >= 30) {
                 Intent bi = new Intent(c, BubbleActivity.class).setAction(Intent.ACTION_VIEW)
                         .setData(Uri.parse(bubbleUrl(c, v.cid))).putExtra("cid", v.cid);
